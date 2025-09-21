@@ -1,9 +1,0 @@
-{
-  "routes": {
-    "/portfolio-website": {},
-    "/portfolio-website/about": {},
-    "/portfolio-website/contact": {},
-    "/portfolio-website/projects": {},
-    "/portfolio-website/services": {}
-  }
-}
