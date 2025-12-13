@@ -9,7 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:myfirstproject": "node dist/myfirstproject/server/server.mjs",
-    "deploy": "ng deploy --base-href=/myportfolio/"
+    "deploy": "ng deploy --base-href=/myfirstproject/"
   },
   "private": true,
   "dependencies": {
