@@ -71,7 +71,7 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/myfirstproject/"
+              "baseHref": "/"
             },
             "development": {
               "optimization": false,
