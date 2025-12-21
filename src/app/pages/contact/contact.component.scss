@@ -620,11 +620,14 @@ ul li{
 }
 .logo
 {
-    max-width: 120px;
+    max-width: 150px;
     max-height: 120px;
     display: flex;
     margin: auto;
-   margin-top: 10px;
+    margin-top: 10px;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
 }
 .logo-head
 {
@@ -634,8 +637,37 @@ ul li{
 }
 .logo a
 {
-    margin: auto;
-    max-width: 100%;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+.logo a i
+{
+    font-size: 30px;
+    transition: all 0.3s ease;
+}
+.logo a:hover
+{
+    transform: scale(1.2);
+}
+.logo a[title="Instagram"] i
+{
+    color: #E4405F;
+}
+.logo a[title="Facebook"] i
+{
+    color: #1877F2;
+}
+.logo a[title="Dribbble"] i
+{
+    color: #EA4C89;
+}
+.logo a:hover i
+{
+    opacity: 0.8;
 }
 
 @media only screen and (max-width: 900px) 
