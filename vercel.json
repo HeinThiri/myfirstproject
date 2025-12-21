@@ -11,9 +11,19 @@
   ],
   "functions": {
     "api/server.mjs": {
-      "runtime": "nodejs20.x",
       "includeFiles": "dist/myfirstproject/**"
     }
-  }
+  },
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
 }
 

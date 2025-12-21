@@ -1,6 +1,5 @@
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
-import { IncomingMessage, ServerResponse } from 'http';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -10,9 +9,20 @@ let reqHandler = null;
 
 async function getHandler() {
   if (!reqHandler) {
-    const serverPath = resolve(__dirname, '../dist/myfirstproject/server/server.mjs');
-    const serverModule = await import(serverPath);
-    reqHandler = serverModule.reqHandler;
+    try {
+      const serverPath = resolve(__dirname, '../dist/myfirstproject/server/server.mjs');
+      const serverModule = await import(serverPath);
+      
+      // Check if reqHandler exists in the module
+      if (serverModule.reqHandler) {
+        reqHandler = serverModule.reqHandler;
+      } else {
+        throw new Error('reqHandler not found in server module. Available exports: ' + Object.keys(serverModule).join(', '));
+      }
+    } catch (error) {
+      console.error('Error loading server module:', error);
+      throw error;
+    }
   }
   return reqHandler;
 }
@@ -21,10 +31,9 @@ export default async function handler(req, res) {
   try {
     const handler = await getHandler();
     
-    // Create a Node.js-compatible request object
-    const nodeReq = Object.create(IncomingMessage.prototype);
-    Object.assign(nodeReq, {
-      url: req.url,
+    // Convert Vercel request to Node.js request-like object
+    const nodeReq = {
+      url: req.url || '/',
       method: req.method || 'GET',
       headers: req.headers || {},
       query: req.query || {},
@@ -32,19 +41,25 @@ export default async function handler(req, res) {
       get: function(header) {
         return this.headers[header?.toLowerCase()];
       },
-      originalUrl: req.url,
-    });
+      originalUrl: req.url || '/',
+      protocol: 'https',
+      hostname: req.headers?.host || '',
+      path: new URL(req.url || '/', 'https://example.com').pathname,
+      ip: req.headers?.['x-forwarded-for'] || req.headers?.['x-real-ip'] || '',
+    };
 
-    // Create a Node.js-compatible response object
+    // Convert Vercel response to Node.js response-like object
     let statusCode = 200;
     const responseHeaders = {};
     let responseBody = '';
+    let headersSent = false;
 
-    const nodeRes = Object.create(ServerResponse.prototype);
-    Object.assign(nodeRes, {
+    const nodeRes = {
       statusCode: 200,
       write: function(chunk) {
-        responseBody += chunk?.toString() || '';
+        if (!headersSent) {
+          responseBody += chunk?.toString() || '';
+        }
         return true;
       },
       end: function(chunk, encoding, callback) {
@@ -52,33 +67,41 @@ export default async function handler(req, res) {
           responseBody += chunk.toString();
         }
         
-        // Send response to Vercel
-        res.status(statusCode);
-        Object.keys(responseHeaders).forEach(key => {
-          res.setHeader(key, responseHeaders[key]);
-        });
-        
-        if (responseBody) {
-          res.send(responseBody);
-        } else {
-          res.end();
-        }
-        
-        if (typeof callback === 'function') {
-          callback();
+        if (!headersSent) {
+          headersSent = true;
+          
+          // Send response to Vercel
+          res.status(statusCode);
+          Object.keys(responseHeaders).forEach(key => {
+            res.setHeader(key, responseHeaders[key]);
+          });
+          
+          if (responseBody) {
+            res.send(responseBody);
+          } else {
+            res.end();
+          }
+          
+          if (typeof callback === 'function') {
+            callback();
+          }
         }
       },
       writeHead: function(code, statusMessage, headers) {
-        statusCode = code;
-        if (typeof statusMessage === 'object') {
-          Object.assign(responseHeaders, statusMessage);
-        } else if (headers) {
-          Object.assign(responseHeaders, headers);
+        if (!headersSent) {
+          statusCode = code;
+          if (typeof statusMessage === 'object') {
+            Object.assign(responseHeaders, statusMessage);
+          } else if (headers) {
+            Object.assign(responseHeaders, headers);
+          }
         }
         return this;
       },
       setHeader: function(name, value) {
-        responseHeaders[name.toLowerCase()] = value;
+        if (!headersSent) {
+          responseHeaders[name.toLowerCase()] = value;
+        }
         return this;
       },
       getHeader: function(name) {
@@ -87,12 +110,27 @@ export default async function handler(req, res) {
       removeHeader: function(name) {
         delete responseHeaders[name.toLowerCase()];
       },
-    });
+      headersSent: false,
+    };
 
     // Call the Angular SSR handler
     await handler(nodeReq, nodeRes);
+    
+    // Ensure response is sent if handler didn't call end()
+    if (!headersSent) {
+      res.status(statusCode);
+      Object.keys(responseHeaders).forEach(key => {
+        res.setHeader(key, responseHeaders[key]);
+      });
+      if (responseBody) {
+        res.send(responseBody);
+      } else {
+        res.end();
+      }
+    }
   } catch (error) {
     console.error('Error handling request:', error);
+    console.error('Error stack:', error.stack);
     if (!res.headersSent) {
       res.status(500).json({ 
         error: 'Internal Server Error', 
@@ -102,4 +140,3 @@ export default async function handler(req, res) {
     }
   }
 }
-
