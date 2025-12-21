@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "build:production": "ng build --configuration production",
+    "build": "npx ng build",
+    "build:production": "npx ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:myfirstproject": "node dist/myfirstproject/server/server.mjs",
