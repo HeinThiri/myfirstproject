@@ -1,16 +1,123 @@
-button {
+.scroll-to-top-btn {
     position: fixed;
-    bottom: 20px;
+    bottom: 30px;
     right: 30px;
     z-index: 99;
-    font-size: 18px;
+    width: 56px;
+    height: 56px;
+    font-size: 20px;
     border: none;
     outline: none;
-    background-color:var(--main-color);
-    color: white;
+    background: linear-gradient(135deg, 
+        rgba(99, 102, 241, 0.1) 0%, 
+        rgba(99, 102, 241, 0.05) 100%);
+    backdrop-filter: blur(30px) saturate(200%);
+    -webkit-backdrop-filter: blur(30px) saturate(200%);
+    color: #6366f1;
     cursor: pointer;
-    padding: 15px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    border-radius: 4px;
-  }
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    box-shadow: 
+        0 8px 32px rgba(99, 102, 241, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scroll-to-top-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.4), 
+        transparent
+    );
+    transition: left 0.6s ease;
+}
+
+.scroll-to-top-btn:hover::before {
+    left: 100%;
+}
+
+.scroll-to-top-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, 
+        rgba(99, 102, 241, 0.2) 0%, 
+        transparent 70%);
+    animation: liquidFlow 8s ease-in-out infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes liquidFlow {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.3;
+    }
+    33% {
+        transform: translate(15px, -15px) rotate(120deg);
+        opacity: 0.5;
+    }
+    66% {
+        transform: translate(-15px, 15px) rotate(240deg);
+        opacity: 0.4;
+    }
+}
+
+.scroll-to-top-btn:hover {
+    background: linear-gradient(135deg, 
+        rgba(99, 102, 241, 0.2) 0%, 
+        rgba(99, 102, 241, 0.1) 100%);
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 
+        0 12px 40px rgba(99, 102, 241, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px) scale(1.05);
+}
+
+.scroll-to-top-btn i {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.scroll-to-top-btn:hover i {
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .scroll-to-top-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+        bottom: 20px;
+        right: 20px;
+    }
+}

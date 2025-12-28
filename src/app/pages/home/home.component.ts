@@ -9,7 +9,7 @@ import { Component,OnInit} from '@angular/core';
 export class HomeComponent {
  
 
-  fullText = 'Passionate Frontend Developer 💻';
+  fullText = 'Passionate Frontend Developer';
   displayText = '';
   currentIndex = 0;
   charIndex = 0;
@@ -31,5 +31,13 @@ export class HomeComponent {
     }, 100); // speed: 100ms per character
   }
 
+  downloadCV() {
+    const link = document.createElement('a');
+    link.href = 'assets/pdf/HeinThiriCV.pdf';
+    link.download = 'HeinThiri_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 
 }

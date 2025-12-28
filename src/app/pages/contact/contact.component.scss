@@ -153,7 +153,7 @@
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(108, 99, 255, 0.2);
+    box-shadow: var(--shadow-colored);
 }
 
 /* Work Section */
@@ -168,9 +168,10 @@ ul li{
     font-size: 2.5rem;
     margin-bottom: 4rem;
     text-align: center;
-    background: linear-gradient(45deg, var(--main-color));
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .work-grid {
@@ -221,7 +222,7 @@ ul li{
 }
 //aBOUT us
 .about-area{
-    background-color: #f7f7f7;
+    background-color: var(--black100);
     padding: 50px;
 }
 .about-content .about-title { font-size: 22px; font-weight: 600; text-transform: capitalize; padding-bottom: 15px; }
@@ -281,12 +282,12 @@ ul li{
     
     .skill-name {
         float: left;
-        color: #666;
+        color: var(--text-secondary);
     }
     
     .skill-status {
         float: right;
-        color: #c4c4c4;
+        color: var(--text-muted);
         font-size: .8em;
     }
     .skill-bar {
@@ -294,7 +295,7 @@ ul li{
         max-width: 450px;
         width: 100%;
         height: 5px;
-        background: #e3e3e5;
+        background: var(--black200);
         clear: both;
         margin: 20px 0;
     }
@@ -457,7 +458,7 @@ ul li{
     margin-bottom: 30px;
     text-align: center;
     position: relative;
-    background-color: #f7f7f7;
+    background-color: var(--black100);
     z-index: 1;
     overflow: hidden;
     transition: all .5s ease;
@@ -571,6 +572,10 @@ ul li{
     height: 80%;
     display: flex;
     margin: auto;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 2rem 3rem;
+    gap: 3rem;
 }
 .spectacledcoder-footer-bottom
 {
@@ -597,6 +602,49 @@ ul li{
 .spectacledcoder-footer-section
 {
     margin: auto;
+    flex: 1;
+    max-width: 400px;
+}
+
+.connect-section {
+    flex: 1.2;
+    text-align: left;
+}
+
+.contact-section {
+    flex: 1;
+    text-align: left;
+}
+
+.social-section {
+    flex: 1;
+    text-align: center;
+}
+
+.connect-description {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.7);
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.contact-item i {
+    color: #6366f1;
+    font-size: 1.2rem;
+    min-width: 24px;
+}
+
+.contact-item span {
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 0.95rem;
 }
 .d-footer-ul
 {
@@ -620,7 +668,7 @@ ul li{
 }
 .logo
 {
-    max-width: 150px;
+   // max-width: 150px;
     max-height: 120px;
     display: flex;
     margin: auto;
@@ -643,11 +691,18 @@ ul li{
     justify-content: center;
     text-decoration: none;
     transition: transform 0.3s ease;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    width: 40px;
+    height: 40px;
 }
 .logo a i
 {
-    font-size: 30px;
+    font-size: 24px;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .logo a:hover
 {
@@ -699,6 +754,30 @@ ul li{
         height: 80%;
         display: flex;
         flex-direction: column;
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+    }
+    
+    .spectacledcoder-footer-section {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .connect-section {
+        text-align: center;
+    }
+    
+    .connect-description {
+        max-width: 100%;
+        margin: 1rem auto 0;
+    }
+    
+    .contact-section {
+        text-align: center;
+    }
+    
+    .contact-item {
+        justify-content: center;
     }
     .spectacledcoder-footer-bottom
     {
@@ -822,7 +901,7 @@ ul li{
     padding: 30px 0;
   }
   .projects{
-    background-color: #f7f7f7;
+    background-color: var(--black100);
   }
    /* Portfolio Grid */
         .portfolio-grid {

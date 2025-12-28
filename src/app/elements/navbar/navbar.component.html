@@ -27,46 +27,52 @@
         </nav>
     </header> -->
     <header class="header">
-        <div class="logo">Hein Thiri Htun</div>
-        <nav class="nav">
-          <div class="nav-toggle" (click)="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <ul class="nav-links" [class.show]="menuOpen">
-            <!-- <li><a href="#home" (click)="closeMenu()" class="active">Home</a></li>
-            <li><a href="#about" (click)="closeMenu()">About</a></li>
-            <li><a href="#services" (click)="closeMenu()">Services</a></li>
-            <li><a href="#projects" (click)="closeMenu()">Projects</a></li>
-            <li><a href="#contact" (click)="closeMenu()">Contact</a></li> -->
-            <li>
-              <a href="#home"
-                 [ngClass]="{ 'active': currentSection === 'home' }"
-                 (click)="setActive('home')">Home</a>
-            </li>
-            <li>
-              <a href="#about"
-                 [ngClass]="{ 'active': currentSection === 'about' }"
-                 (click)="setActive('about')">About</a>
-            </li>
-            <li>
-              <a href="#services"
-                 [ngClass]="{ 'active': currentSection === 'services' }"
-                 (click)="setActive('services')">Services</a>
-            </li>
-            <li>
-              <a href="#projects"
-                 [ngClass]="{ 'active': currentSection === 'projects' }"
-                 (click)="setActive('projects')">Projects</a>
-            </li>
-            <li>
-              <a href="#contact"
-                 [ngClass]="{ 'active': currentSection === 'contact' }"
-                 (click)="setActive('contact')">Contact</a>
-            </li>
-            
-          </ul>
-        </nav>
+        <div class="navbar-container">
+          <nav class="nav">
+            <div class="nav-toggle" [class.active]="menuOpen" (click)="toggleMenu($event)">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <ul class="nav-links" [class.show]="menuOpen" (click)="onMenuClick($event)">
+              <li>
+                <a href="#home"
+                   [ngClass]="{ 'active': currentSection === 'home' }"
+                   (click)="setActive('home')">Home</a>
+              </li>
+              <li>
+                <a href="#about"
+                   [ngClass]="{ 'active': currentSection === 'about' }"
+                   (click)="setActive('about')">About</a>
+              </li>
+              <li>
+                <a href="#services"
+                   [ngClass]="{ 'active': currentSection === 'services' }"
+                   (click)="setActive('services')">Services</a>
+              </li>
+              <li>
+                <a href="#projects"
+                   [ngClass]="{ 'active': currentSection === 'projects' }"
+                   (click)="setActive('projects')">Projects</a>
+              </li>
+              <li>
+                <a href="#contact"
+                   [ngClass]="{ 'active': currentSection === 'contact' }"
+                   (click)="setActive('contact')">Contact</a>
+              </li>
+            </ul>
+            <div class="language-selector">
+              <button class="lang-btn" (click)="toggleLanguageMenu($event)">
+                <i class="fa fa-globe"></i>
+                <span>{{ currentLanguage }}</span>
+                <i class="fa fa-chevron-down" [class.rotated]="languageMenuOpen"></i>
+              </button>
+              <div class="language-dropdown" [class.show]="languageMenuOpen" (click)="$event.stopPropagation()">
+                <a href="#" (click)="selectLanguage('EN', $event); $event.preventDefault()" [class.active]="currentLanguage === 'EN'">English</a>
+                <a href="#" (click)="selectLanguage('MY', $event); $event.preventDefault()" [class.active]="currentLanguage === 'MY'">Myanmar</a>
+              </div>
+            </div>
+          </nav>
+        </div>
       </header>
       

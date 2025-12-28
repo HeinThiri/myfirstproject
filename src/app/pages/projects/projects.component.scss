@@ -71,7 +71,7 @@
     content: '|';
     animation: blink 1s infinite;
     margin-left: 5px;
-    color: #999;
+    color: var(--text-muted);
   }
   
   @keyframes blink {
@@ -153,7 +153,7 @@
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(108, 99, 255, 0.2);
+    box-shadow: var(--shadow-colored);
 }
 
 /* Work Section */
@@ -221,7 +221,7 @@ ul li{
 }
 //aBOUT us
 .about-area{
-    background-color: #f7f7f7;
+    background-color: var(--black100);
     padding: 50px;
 }
 .about-content .about-title { font-size: 22px; font-weight: 600; text-transform: capitalize; padding-bottom: 15px; }
@@ -281,12 +281,12 @@ ul li{
     
     .skill-name {
         float: left;
-        color: #666;
+        color: var(--text-secondary);
     }
     
     .skill-status {
         float: right;
-        color: #c4c4c4;
+        color: var(--text-muted);
         font-size: .8em;
     }
     .skill-bar {
@@ -294,7 +294,7 @@ ul li{
         max-width: 450px;
         width: 100%;
         height: 5px;
-        background: #e3e3e5;
+        background: var(--black200);
         clear: both;
         margin: 20px 0;
     }
@@ -457,7 +457,7 @@ ul li{
     margin-bottom: 30px;
     text-align: center;
     position: relative;
-    background-color: #f7f7f7;
+    background-color: var(--black100);
     z-index: 1;
     overflow: hidden;
     transition: all .5s ease;
@@ -514,13 +514,13 @@ ul li{
     
     }
 
-        .service-item:hover p { color: var(--black900); color: #ccc}
+        .service-item:hover p { color: var(--white); }
         .home-img {
             width: 350px;             /* or any fixed size */
             height: 350px;
             object-fit: cover;
             border-radius: 50%;       /* this makes it a circle */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* optional: soft shadow */
+            box-shadow: var(--shadow-md); /* optional: soft shadow */
             background-color: var(--main-color);
         }
 
@@ -529,7 +529,7 @@ ul li{
         height:100%;
         object-fit: cover;
         border-radius: 50%;
-        box-shadow:0 0 20px rgba(0,0,0,0.1);
+        box-shadow: var(--shadow-lg);
         transition:all 0.3 s ease;
        }
        //contact
@@ -588,7 +588,7 @@ ul li{
 {
     text-decoration: none;
 
-    color: #0a0a0a;
+    color: var(--text-dark);
 }
 .spectacledcoder-footer-bottom-sec a:hover
 {
@@ -722,12 +722,12 @@ ul li{
     transition: background 0.3s ease-in-out;
   }
   .education__content h5 {
-    color: rgba(0, 0, 0, 0.9);
+    color: var(--text-dark);
     font-size: 1rem;
     margin-block: 0;
   }
   .education__content p {
-    color: rgba(0, 0, 0, 0.6);
+    color: var(--text-secondary);
     font-size: 0.9rem;
     margin-block-start: 0.5rem;
     margin-block-end: 0;
@@ -745,7 +745,7 @@ ul li{
     border-radius: 50%;
     background-color: var(--main-color);
     box-shadow: inset 0 0 0 1px white;
-    border: 1px solid #333;
+    border: 1px solid var(--black500);
     left: 1rem;
     top: 0.74rem;
   }
@@ -790,7 +790,7 @@ ul li{
     padding: 30px 0;
   }
   .projects{
-    background-color: #f7f7f7;
+    background-color: var(--black100);
   }
    /* Portfolio Grid */
         .portfolio-grid {

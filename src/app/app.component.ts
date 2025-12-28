@@ -8,7 +8,7 @@ import { Component,HostListener } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'myfirstproject';
+  title = 'HeinThiriHtun';
   isShow: boolean =false;
   topPosToStartShowing = 100;
 

@@ -28,11 +28,11 @@
                   The website features both company product showcases and hotel services, developed with Angular and the Ionic framework. It supports multiple languages, integrates with Google Analytics, is optimized for SEO, and includes API integration.</p>
              </div>
              <div class="text-center">
-               <a href="/#" class="btn d-block btn-primary py-3 fs-5 card-btn md">
+               <button (click)="openProjectModal(1)" class="btn d-block btn-primary py-3 fs-5 card-btn md w-100 border-0">
                  <i class="fa fa-arrow-right icon-arrow before"></i>
                  <span class="label fw-normal">Know More!</span>
                  <i class="fa fa-arrow-right icon-arrow after"></i>
-               </a>
+               </button>
              </div>
            </div>
          </div>
@@ -50,11 +50,11 @@
               <p class="text-secondary text-center ">Developed with Wix Studio, this banking website is fully responsive across mobile, tablet, and desktop devices. It features multilingual support, an integrated CMS portal, and custom functionalities implemented using JavaScript within the Wix Studio environment.</p>
             </div>
              <div class="text-center">
-               <a href="/#" class="btn d-block btn-primary py-3 fs-5 card-btn md">
+               <button (click)="openProjectModal(2)" class="btn d-block btn-primary py-3 fs-5 card-btn md w-100 border-0">
                  <i class="fa fa-arrow-right icon-arrow before"></i>
                  <span class="label fw-normal">Know More!</span>
                  <i class="fa fa-arrow-right icon-arrow after"></i>
-               </a>
+               </button>
              </div>
           </div>
         </div>
@@ -72,11 +72,11 @@
               <p class="text-secondary text-center">Built with C#, ADO.NET, and MySQL as part of a team project, this Cake Selling System provides an efficient solution for cake shops. It simplifies in-store operations and offers customers the convenience of ordering cakes online.</p>
             </div>
              <div class="text-center">
-               <a href="/#" class="btn d-block btn-primary py-3 fs-5 card-btn md">
+               <button (click)="openProjectModal(3)" class="btn d-block btn-primary py-3 fs-5 card-btn md w-100 border-0">
                  <i class="fa fa-arrow-right icon-arrow before"></i>
                  <span class="label fw-normal">Know More!</span>
                  <i class="fa fa-arrow-right icon-arrow after"></i>
-               </a>
+               </button>
              </div>
           </div>
         </div>
@@ -84,3 +84,537 @@
     </div>
   </div>
       </section>
+
+      <!-- Mini Projects Section -->
+      <section class="mini-projects section-project" id="mini-projects" data-scroll-index="3">
+        <div class="container mb-5">
+          <div class="col-12 mt-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 heading-section text-center">
+                <div class="section-title">
+                  <h4>Mini Projects</h4>
+                  <h2><span>Fun and interactive mini projects including games</span></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-5 card-effects">
+            <!-- Game Project 1: Tic Tac Toe -->
+            <div class="col-md-4 mb-4">
+              <div class="card card-effect p-0 h-100">
+                <div class="card-img rounded-0">
+                  <div class="img-hover">
+                    <div class="game-preview tic-tac-toe-preview">
+                      <div class="preview-grid">
+                        <div class="preview-cell">X</div>
+                        <div class="preview-cell">O</div>
+                        <div class="preview-cell">X</div>
+                        <div class="preview-cell">O</div>
+                        <div class="preview-cell">X</div>
+                        <div class="preview-cell"></div>
+                        <div class="preview-cell">O</div>
+                        <div class="preview-cell"></div>
+                        <div class="preview-cell">X</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body position-relative pt-0 px-1-9 pb-1-9">
+                  <div class="pt-6">
+                    <div class="h4 mb-3 mt-4 text-center">
+                      <a class="text-decoration-none fw-bolder text-uppercase text-tb-lines" href="#/">Tic Tac Toe Game</a>
+                    </div>
+                    <p class="text-secondary text-center lh-base">
+                      A classic Tic Tac Toe game built with HTML, CSS, and JavaScript. Features interactive gameplay, win detection, and score tracking. Perfect for demonstrating DOM manipulation and game logic.
+                    </p>
+                    <div class="text-center mb-2">
+                      <span class="badge bg-primary me-1">HTML</span>
+                      <span class="badge bg-primary me-1">CSS</span>
+                      <span class="badge bg-primary">JavaScript</span>
+                    </div>
+                  </div>
+                  <div class="text-center">
+                    <button (click)="openTicTacToe()" class="btn d-block btn-primary py-3 fs-5 card-btn md w-100 border-0">
+                      <i class="fa fa-arrow-right icon-arrow before"></i>
+                      <span class="label fw-normal">Play Game</span>
+                      <i class="fa fa-arrow-right icon-arrow after"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Game Project 2: Snake Game -->
+            <div class="col-md-4 mb-4">
+              <div class="card card-effect p-0 h-100">
+                <div class="card-img rounded-0">
+                  <div class="img-hover">
+                    <div class="game-preview snake-preview">
+                      <div class="snake-game-visual">
+                        <div class="snake-segment"></div>
+                        <div class="snake-segment"></div>
+                        <div class="snake-segment head"></div>
+                        <div class="food"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body position-relative pt-0 px-1-9 pb-1-9">
+                  <div class="pt-6">
+                    <div class="h4 mb-3 mt-4 text-center">
+                      <a class="text-decoration-none fw-bolder text-uppercase text-tb-lines" href="#/">Snake Game</a>
+                    </div>
+                    <p class="text-secondary text-center lh-base">
+                      Classic Snake game implementation using vanilla JavaScript and Canvas API. Includes score system, game over detection, and smooth controls. Great for learning game development basics.
+                    </p>
+                    <div class="text-center mb-2">
+                      <span class="badge bg-primary me-1">JavaScript</span>
+                      <span class="badge bg-primary me-1">Canvas</span>
+                      <span class="badge bg-primary">Game Dev</span>
+                    </div>
+                  </div>
+                  <div class="text-center">
+                    <button (click)="openRockPaperScissors()" class="btn d-block btn-primary py-3 fs-5 card-btn md w-100 border-0">
+                      <i class="fa fa-arrow-right icon-arrow before"></i>
+                      <span class="label fw-normal">Play Game</span>
+                      <i class="fa fa-arrow-right icon-arrow after"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Game Project 3: Memory Card Game -->
+            <div class="col-md-4 mb-4">
+              <div class="card card-effect p-0 h-100">
+                <div class="card-img rounded-0">
+                  <div class="img-hover">
+                    <div class="game-preview memory-preview">
+                      <div class="memory-grid-preview">
+                        <div class="memory-card-preview">🎮</div>
+                        <div class="memory-card-preview">?</div>
+                        <div class="memory-card-preview">🎯</div>
+                        <div class="memory-card-preview">?</div>
+                        <div class="memory-card-preview">?</div>
+                        <div class="memory-card-preview">🎲</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body position-relative pt-0 px-1-9 pb-1-9">
+                  <div class="pt-6">
+                    <div class="h4 mb-3 mt-4 text-center">
+                      <a class="text-decoration-none fw-bolder text-uppercase text-tb-lines" href="#/">Memory Card Game</a>
+                    </div>
+                    <p class="text-secondary text-center lh-base">
+                      A fun memory matching card game with flip animations and timer. Built with HTML, CSS, and JavaScript. Features multiple difficulty levels and move counter. Tests your memory skills!
+                    </p>
+                    <div class="text-center mb-2">
+                      <span class="badge bg-primary me-1">HTML</span>
+                      <span class="badge bg-primary me-1">CSS</span>
+                      <span class="badge bg-primary">JavaScript</span>
+                    </div>
+                  </div>
+                  <div class="text-center">
+                    <button (click)="openMemoryGame()" class="btn d-block btn-primary py-3 fs-5 card-btn md w-100 border-0">
+                      <i class="fa fa-arrow-right icon-arrow before"></i>
+                      <span class="label fw-normal">Play Game</span>
+                      <i class="fa fa-arrow-right icon-arrow after"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mini Project 4: Calculator -->
+            <div class="col-md-4 mb-4">
+              <div class="card card-effect p-0 h-100">
+                <div class="card-img rounded-0">
+                  <div class="img-hover">
+                    <div class="game-preview calculator-preview">
+                      <div class="calc-display-preview">1234</div>
+                      <div class="calc-buttons-preview">
+                        <div class="calc-btn-preview">7</div>
+                        <div class="calc-btn-preview">8</div>
+                        <div class="calc-btn-preview">9</div>
+                        <div class="calc-btn-preview op">+</div>
+                        <div class="calc-btn-preview">4</div>
+                        <div class="calc-btn-preview">5</div>
+                        <div class="calc-btn-preview">6</div>
+                        <div class="calc-btn-preview op">-</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body position-relative pt-0 px-1-9 pb-1-9">
+                  <div class="pt-6">
+                    <div class="h4 mb-3 mt-4 text-center">
+                      <a class="text-decoration-none fw-bolder text-uppercase text-tb-lines" href="#/">Calculator App</a>
+                    </div>
+                    <p class="text-secondary text-center lh-base">
+                      A fully functional calculator with modern UI design. Supports basic arithmetic operations, keyboard input, and responsive design. Built with HTML, CSS, and JavaScript.
+                    </p>
+                    <div class="text-center mb-2">
+                      <span class="badge bg-primary me-1">HTML</span>
+                      <span class="badge bg-primary me-1">CSS</span>
+                      <span class="badge bg-primary">JavaScript</span>
+                    </div>
+                  </div>
+                  <div class="text-center">
+                    <button (click)="openCalculator()" class="btn d-block btn-primary py-3 fs-5 card-btn md w-100 border-0">
+                      <i class="fa fa-arrow-right icon-arrow before"></i>
+                      <span class="label fw-normal">Try It</span>
+                      <i class="fa fa-arrow-right icon-arrow after"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mini Project 5: Todo App -->
+            <div class="col-md-4 mb-4">
+              <div class="card card-effect p-0 h-100">
+                <div class="card-img rounded-0">
+                  <div class="img-hover">
+                    <div class="game-preview todo-preview">
+                      <div class="todo-list-visual">
+                        <div class="todo-item-preview">
+                          <span class="todo-check">✓</span>
+                          <span class="todo-text">Complete project</span>
+                        </div>
+                        <div class="todo-item-preview">
+                          <span class="todo-check">✓</span>
+                          <span class="todo-text">Review code</span>
+                        </div>
+                        <div class="todo-item-preview">
+                          <span class="todo-check-empty"></span>
+                          <span class="todo-text">Deploy app</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body position-relative pt-0 px-1-9 pb-1-9">
+                  <div class="pt-6">
+                    <div class="h4 mb-3 mt-4 text-center">
+                      <a class="text-decoration-none fw-bolder text-uppercase text-tb-lines" href="#/">Todo List App</a>
+                    </div>
+                    <p class="text-secondary text-center lh-base">
+                      A clean and intuitive todo list application with add, edit, delete, and mark complete features. Includes local storage persistence. Built with vanilla JavaScript.
+                    </p>
+                    <div class="text-center mb-2">
+                      <span class="badge bg-primary me-1">HTML</span>
+                      <span class="badge bg-primary me-1">CSS</span>
+                      <span class="badge bg-primary">JavaScript</span>
+                    </div>
+                  </div>
+                  <div class="text-center">
+                    <button (click)="openTodoList()" class="btn d-block btn-primary py-3 fs-5 card-btn md w-100 border-0">
+                      <i class="fa fa-arrow-right icon-arrow before"></i>
+                      <span class="label fw-normal">Try It</span>
+                      <i class="fa fa-arrow-right icon-arrow after"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mini Project 6: Rock Paper Scissors -->
+            <div class="col-md-4 mb-4">
+              <div class="card card-effect p-0 h-100">
+                <div class="card-img rounded-0">
+                  <div class="img-hover">
+                    <div class="game-preview rps-preview">
+                      <div class="rps-visual">
+                        <div class="rps-hand">🪨</div>
+                        <div class="rps-vs">VS</div>
+                        <div class="rps-hand">✂️</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body position-relative pt-0 px-1-9 pb-1-9">
+                  <div class="pt-6">
+                    <div class="h4 mb-3 mt-4 text-center">
+                      <a class="text-decoration-none fw-bolder text-uppercase text-tb-lines" href="#/">Rock Paper Scissors</a>
+                    </div>
+                    <p class="text-secondary text-center lh-base">
+                      Interactive Rock Paper Scissors game against the computer. Features score tracking, animations, and responsive design. A fun way to demonstrate JavaScript logic and DOM manipulation.
+                    </p>
+                    <div class="text-center mb-2">
+                      <span class="badge bg-primary me-1">HTML</span>
+                      <span class="badge bg-primary me-1">CSS</span>
+                      <span class="badge bg-primary">JavaScript</span>
+                    </div>
+                  </div>
+                  <div class="text-center">
+                    <button (click)="openRockPaperScissors()" class="btn d-block btn-primary py-3 fs-5 card-btn md w-100 border-0">
+                      <i class="fa fa-arrow-right icon-arrow before"></i>
+                      <span class="label fw-normal">Play Game</span>
+                      <i class="fa fa-arrow-right icon-arrow after"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Game Modals -->
+      <!-- Tic Tac Toe Modal -->
+      <div *ngIf="showTicTacToe" class="game-modal-overlay" (click)="closeGame('ticTacToe')">
+        <div class="game-modal-content" (click)="$event.stopPropagation()">
+          <div class="game-modal-header">
+            <h3>Tic Tac Toe</h3>
+            <button class="close-btn" (click)="closeGame('ticTacToe')">&times;</button>
+          </div>
+          <div class="game-modal-body">
+            <div class="tic-tac-toe-container">
+              <div class="game-controls mb-3">
+                <div class="score-board-ttt">
+                  <div class="score-item">
+                    <span class="score-label">X</span>
+                    <span class="score-value">{{ ticTacToeXScore }}</span>
+                  </div>
+                  <div class="score-item">
+                    <span class="score-label">Draws</span>
+                    <span class="score-value">{{ ticTacToeDraws }}</span>
+                  </div>
+                  <div class="score-item">
+                    <span class="score-label">O</span>
+                    <span class="score-value">{{ ticTacToeOScore }}</span>
+                  </div>
+                </div>
+                <div class="ai-toggle mt-2">
+                  <label class="ai-switch">
+                    <input type="checkbox" [(ngModel)]="ticTacToeIsAI" (change)="toggleAIMode()">
+                    <span class="slider"></span>
+                    <span class="ai-label">AI Opponent</span>
+                  </label>
+                </div>
+              </div>
+              <div class="game-status mb-3 text-center">
+                <p *ngIf="!ticTacToeGameOver" class="mb-0">Current Player: <strong>{{ ticTacToeCurrentPlayer }}</strong></p>
+                <p *ngIf="ticTacToeWinner" class="mb-0 text-success"><strong>Player {{ ticTacToeWinner }} Wins! 🎉</strong></p>
+                <p *ngIf="ticTacToeGameOver && !ticTacToeWinner" class="mb-0 text-warning"><strong>It's a Draw!</strong></p>
+              </div>
+              <div class="tic-tac-toe-board">
+                <div *ngFor="let cell of ticTacToeBoard; let i = index" 
+                     class="tic-tac-toe-cell" 
+                     [class.winning-cell]="ticTacToeWinner"
+                     (click)="makeMove(i)">
+                  {{ cell || '' }}
+                </div>
+              </div>
+              <div class="text-center mt-3">
+                <button class="btn btn-secondary me-2" (click)="resetTicTacToe()">New Game</button>
+                <button class="btn btn-danger" (click)="ticTacToeXScore = 0; ticTacToeOScore = 0; ticTacToeDraws = 0">Reset Scores</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rock Paper Scissors Modal -->
+      <div *ngIf="showRockPaperScissors" class="game-modal-overlay" (click)="closeGame('rockPaperScissors')">
+        <div class="game-modal-content" (click)="$event.stopPropagation()">
+          <div class="game-modal-header">
+            <h3>Rock Paper Scissors</h3>
+            <button class="close-btn" (click)="closeGame('rockPaperScissors')">&times;</button>
+          </div>
+          <div class="game-modal-body">
+            <div class="rps-container">
+              <div class="score-board mb-4">
+                <div class="row text-center">
+                  <div class="col-6">
+                    <h4>You</h4>
+                    <div class="score">{{ rpsPlayerScore }}</div>
+                  </div>
+                  <div class="col-6">
+                    <h4>Computer</h4>
+                    <div class="score">{{ rpsComputerScore }}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="choices mb-4">
+                <button class="rps-btn" (click)="playRockPaperScissors('rock')">🪨 Rock</button>
+                <button class="rps-btn" (click)="playRockPaperScissors('paper')">📄 Paper</button>
+                <button class="rps-btn" (click)="playRockPaperScissors('scissors')">✂️ Scissors</button>
+              </div>
+              <div *ngIf="rpsPlayerChoice" class="result-display text-center">
+                <p>You chose: <strong>{{ rpsPlayerChoice }}</strong></p>
+                <p>Computer chose: <strong>{{ rpsComputerChoice }}</strong></p>
+                <h4 class="result-text">{{ rpsResult }}</h4>
+              </div>
+              <div class="text-center mt-3">
+                <button class="btn btn-secondary" (click)="resetRockPaperScissors()">Reset Score</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Memory Game Modal -->
+      <div *ngIf="showMemoryGame" class="game-modal-overlay" (click)="closeGame('memory')">
+        <div class="game-modal-content memory-game-modal" (click)="$event.stopPropagation()">
+          <div class="game-modal-header">
+            <h3>Memory Card Game</h3>
+            <button class="close-btn" (click)="closeGame('memory')">&times;</button>
+          </div>
+          <div class="game-modal-body">
+            <div class="memory-container">
+              <div class="memory-stats mb-3 text-center">
+                <span class="badge bg-info me-2">Moves: {{ memoryMoves }}</span>
+                <span class="badge bg-success">Matches: {{ memoryMatches }}/6</span>
+              </div>
+              <div class="memory-board">
+                <div *ngFor="let card of memoryCards; let i = index" 
+                     class="memory-card" 
+                     [class.flipped]="card.flipped"
+                     [class.matched]="card.matched"
+                     (click)="flipCard(i)">
+                  <div class="memory-card-front">?</div>
+                  <div class="memory-card-back">{{ card.value }}</div>
+                </div>
+              </div>
+              <div class="text-center mt-3">
+                <button class="btn btn-secondary" (click)="initMemoryGame()">New Game</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calculator Modal -->
+      <div *ngIf="showCalculator" class="game-modal-overlay" (click)="closeGame('calculator')">
+        <div class="game-modal-content calculator-modal" (click)="$event.stopPropagation()">
+          <div class="game-modal-header">
+            <h3>Calculator</h3>
+            <button class="close-btn" (click)="closeGame('calculator')">&times;</button>
+          </div>
+          <div class="game-modal-body">
+            <div class="calculator-container">
+              <div class="calculator-display">{{ calculatorDisplay }}</div>
+              <div class="calculator-buttons">
+                <button class="calc-btn" (click)="calculatorInput('C')">C</button>
+                <button class="calc-btn" (click)="calculatorInput('/')">/</button>
+                <button class="calc-btn" (click)="calculatorInput('*')">×</button>
+                <button class="calc-btn" (click)="calculatorInput('-')">-</button>
+                <button class="calc-btn" (click)="calculatorInput('7')">7</button>
+                <button class="calc-btn" (click)="calculatorInput('8')">8</button>
+                <button class="calc-btn" (click)="calculatorInput('9')">9</button>
+                <button class="calc-btn" (click)="calculatorInput('+')">+</button>
+                <button class="calc-btn" (click)="calculatorInput('4')">4</button>
+                <button class="calc-btn" (click)="calculatorInput('5')">5</button>
+                <button class="calc-btn" (click)="calculatorInput('6')">6</button>
+                <button class="calc-btn" (click)="calculatorInput('1')">1</button>
+                <button class="calc-btn" (click)="calculatorInput('2')">2</button>
+                <button class="calc-btn" (click)="calculatorInput('3')">3</button>
+                <button class="calc-btn equals" (click)="calculatorInput('=')">=</button>
+                <button class="calc-btn zero" (click)="calculatorInput('0')">0</button>
+                <button class="calc-btn" (click)="calculatorInput('.')">.</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Todo List Modal -->
+      <div *ngIf="showTodoList" class="game-modal-overlay" (click)="closeGame('todo')">
+        <div class="game-modal-content todo-modal" (click)="$event.stopPropagation()">
+          <div class="game-modal-header">
+            <h3>Todo List</h3>
+            <button class="close-btn" (click)="closeGame('todo')">&times;</button>
+          </div>
+          <div class="game-modal-body">
+            <div class="todo-container">
+              <div class="todo-input mb-3">
+                <input type="text" 
+                       class="form-control" 
+                       [(ngModel)]="newTodoText" 
+                       (keyup.enter)="addTodo()"
+                       placeholder="Add a new task...">
+                <button class="btn btn-primary mt-2 w-100" (click)="addTodo()">
+                  <i class="fa fa-plus me-2"></i>Add Todo
+                </button>
+              </div>
+              <div class="todo-stats mb-3 text-center">
+                <span class="badge bg-info me-2">Total: {{ todos.length }}</span>
+                <span class="badge bg-success me-2">Completed: {{ completedTodosCount }}</span>
+                <span class="badge bg-warning">Pending: {{ pendingTodosCount }}</span>
+              </div>
+              <div class="todo-list">
+                <div *ngFor="let todo of todos" class="todo-item">
+                  <input type="checkbox" 
+                         [checked]="todo.completed" 
+                         (change)="toggleTodo(todo.id)"
+                         class="me-2">
+                  <span [class.completed]="todo.completed">{{ todo.text }}</span>
+                  <button class="btn btn-sm btn-danger ms-auto" (click)="deleteTodo(todo.id)">
+                    <i class="fa fa-trash"></i>
+                  </button>
+                </div>
+                <p *ngIf="todos.length === 0" class="text-center text-muted">No todos yet. Add one above!</p>
+              </div>
+              <div *ngIf="hasCompletedTodos" class="text-center mt-3">
+                <button class="btn btn-warning btn-sm" (click)="clearCompleted()">
+                  <i class="fa fa-check me-2"></i>Clear Completed
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Detail Modal -->
+      <div *ngIf="showProjectModal && selectedProject" class="project-modal-overlay" (click)="closeProjectModal()">
+        <div class="project-modal-content" (click)="$event.stopPropagation()">
+          <div class="project-modal-header">
+            <h3>{{ selectedProject.title }}</h3>
+            <button class="close-btn" (click)="closeProjectModal()">&times;</button>
+          </div>
+          <div class="project-modal-body">
+            <div class="project-modal-image">
+              <img [src]="selectedProject.image" [alt]="selectedProject.title">
+            </div>
+            <div class="project-description">
+              <p>{{ selectedProject.description }}</p>
+            </div>
+            
+            <div class="project-details-section">
+              <h4 class="section-heading">
+                <i class="fa fa-cubes"></i> Modules
+              </h4>
+              <ul class="project-list">
+                <li *ngFor="let module of selectedProject.modules">
+                  <i class="fa fa-check-circle"></i> {{ module }}
+                </li>
+              </ul>
+            </div>
+
+            <div class="project-details-section">
+              <h4 class="section-heading">
+                <i class="fa fa-sitemap"></i> Project Flow
+              </h4>
+              <div class="flow-container">
+                <div class="flow-step" *ngFor="let step of selectedProject.flow; let i = index">
+                  <div class="flow-number">{{ i + 1 }}</div>
+                  <div class="flow-content">{{ step }}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-details-section">
+              <h4 class="section-heading">
+                <i class="fa fa-code"></i> Technologies & Languages
+              </h4>
+              <div class="languages-container">
+                <span class="language-badge" *ngFor="let lang of selectedProject.languages">
+                  {{ lang }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
